@@ -56,7 +56,7 @@
     <section class="mb-16 py-8">
         <div class="px-24">
             <h1 class="text-slate-800 text-center mt-10 text-2xl font-bold">Promo Menarik Bulan Ini</h1>
-            <div class="grid grid-cols-3 mt-10 gap-10">
+            <div class="grid grid-cols-3 mt-16 gap-10">
                 <div class="bg-gray-200 rounded-md shadow-lg p-20 relative">
                     <img src="{{ asset('assets/img/promo-1.png') }}" alt=""
                         class="absolute inset-0 object-cover w-full h-full">
@@ -76,15 +76,23 @@
     {{-- Universitas Sectiion --}}
     <section class="mb-4 py-20 ">
         <h1 class="text-2xl text-black font-bold text-center">Beasiswa Universitas Impian</h1>
-        <div class="px-24 flex flex-row justify-center mt-20 gap-14">
-            <img src="{{ asset('assets/img/ui.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/ugm.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/itb.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/pens.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/unair.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/harvard.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/stanford.webp') }}" class="w-20 h-20 grayscale pb-4 duration-700 hover:grayscale-0" alt="">
-            <img src="{{ asset('assets/img/mit.png') }}" class="w-20 h-12 grayscale pt-3 duration-700 hover:grayscale-0" alt="">
+        <div class="px-24 flex flex-row justify-center mt-16 gap-14">
+            <img src="{{ asset('assets/img/ui.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/ugm.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/itb.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/pens.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/unair.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/harvard.png') }}" class="w-16 h-16 grayscale duration-700 hover:grayscale-0"
+                alt="">
+            <img src="{{ asset('assets/img/stanford.webp') }}"
+                class="w-20 h-20 grayscale pb-4 duration-700 hover:grayscale-0" alt="">
+            <img src="{{ asset('assets/img/mit.png') }}"
+                class="w-20 h-12 grayscale pt-3 duration-700 hover:grayscale-0" alt="">
         </div>
     </section>
 
@@ -97,9 +105,86 @@
     </div>
 
     {{-- Kerja Sama --}}
-    <section class="bg-sky-50 py-20">
-
+    <section class="bg-sky-50 py-20 px-10">
+        <div class="px-24">
+            <h1 class="text-2xl font-bold text-center">Tutorial Daftar Beasiswa di Scholar Verse</h1>
+    
+            <!-- Bagian Pertama -->
+            <div class="relative flex items-start mt-10 px-28">
+                <div class="relative mr-6 my-auto">
+                    <span class="text-lg text-sky-700 font-bold bg-white p-3 rounded-full w-12 h-12 flex items-center justify-center">1.</span>
+                    <!-- Garis vertikal -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-full h-[calc(100%+12rem)] flex flex-col items-center justify-between">
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                    </div>
+                </div>
+                <div class="flex-grow bg-white rounded-lg shadow-lg flex justify-between px-8">
+                    <div class="flex flex-col max-w-96">
+                        <h3 class="text-2xl font-bold mt-8">Beasiswa Bidikmisi PTN Indonesia</h3>
+                        <h3 class="text-lg font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur a veniam.</h3>
+                        <a href="#" class="bg-orange-400 text-center text-white py-2 mr-60 mt-4 text-base font-bold rounded-lg shadow-md hover:opacity-85" type="button">Daftar</a>
+                    </div>
+                    <div class="py-10">
+                        <img src="{{ asset('assets/img/promo-1.png') }}" class="h-40 w-40 object-cover shadow-lg rounded-lg" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Bagian Kedua -->
+            <div class="relative flex items-start mt-10 px-28">
+                <div class="relative mr-6 my-auto">
+                    <span class="text-lg text-sky-700 font-bold bg-white p-3 rounded-full w-12 h-12 flex items-center justify-center">2.</span>
+                    <!-- Garis vertikal -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-full h-[calc(100%+12rem)] flex flex-col items-center justify-between">
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                        <div class="w-1 h-4 bg-sky-700 rounded-full my-2"></div>
+                    </div>
+                </div>
+                <div class="flex-grow bg-white rounded-lg shadow-lg flex justify-between px-8">
+                    <div class="flex flex-col max-w-96">
+                        <h3 class="text-2xl font-bold mt-8">Beasiswa Bidikmisi PTN Indonesia</h3>
+                        <h3 class="text-lg font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur a veniam.</h3>
+                        <a href="#" class="bg-orange-400 text-center text-white py-2 mr-60 mt-4 text-base font-bold rounded-lg shadow-md hover:opacity-85" type="button">Daftar</a>
+                    </div>
+                    <div class="py-10">
+                        <img src="{{ asset('assets/img/promo-1.png') }}" class="h-40 w-40 object-cover shadow-lg rounded-lg" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Bagian Ketiga -->
+            <div class="relative flex items-start justify-center mt-10 px-28">
+                <div class="relative mr-6 my-auto">
+                    <span class="text-lg text-sky-700 font-bold bg-white p-3 rounded-full w-12 h-12 flex items-center justify-center">3.</span>
+                </div>
+                <div class="flex-grow bg-white rounded-lg shadow-lg flex justify-between px-8">
+                    <div class="flex flex-col max-w-96">
+                        <h3 class="text-2xl font-bold mt-8">Beasiswa Bidikmisi PTN Indonesia</h3>
+                        <h3 class="text-lg font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consequatur a veniam.</h3>
+                        <a href="#" class="bg-orange-400 text-center text-white py-2 mr-60 mt-4 text-base font-bold rounded-lg shadow-md hover:opacity-85" type="button">Daftar</a>
+                    </div>
+                    <div class="py-10">
+                        <img src="{{ asset('assets/img/promo-1.png') }}" class="h-40 w-40 object-cover shadow-lg rounded-lg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
+    
 </body>
 
 </html>
