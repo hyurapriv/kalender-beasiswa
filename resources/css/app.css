@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .px-24 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .flex-col-mobile {
+        flex-direction: column;
+    }
+    .w-full-mobile {
+        width: 100%;
+    }
+    .text-center-mobile {
+        text-align: center;
+    }
+    .mt-4-mobile {
+        margin-top: 1rem;
+    }
+    .hidden-mobile {
+        display: none;
+    }
+    .grid-cols-1-mobile {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .px-4-mobile {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
