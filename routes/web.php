@@ -15,4 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('/pages/app/index');
-});
+})->name('home');
+
+Route::get('/program-kami', function () {
+    return view('/pages/app/program-kami');
+})->name('program-kami');
+
+Route::get('/kalender-beasiswa', function () {
+    return view('/pages/app/beasiswa');
+})->name('kalender-beasiswa');
+
+Route::get('/bimbingan-belajar', function () {
+    return view('/pages/app/bimbingan-belajar');
+})->name('bimbingan-belajar');
+
