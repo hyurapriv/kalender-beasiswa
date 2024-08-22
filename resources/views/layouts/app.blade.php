@@ -16,6 +16,8 @@
         @yield('content')
     </main>
     @include('partials.app.footer')
+
+    @vite('resources/js/app.js')
 </body>
 
 </html>

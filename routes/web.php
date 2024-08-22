@@ -28,4 +28,3 @@ Route::get('/kalender-beasiswa', function () {
 Route::get('/bimbingan-belajar', function () {
     return view('/pages/app/bimbingan-belajar');
 })->name('bimbingan-belajar');
-

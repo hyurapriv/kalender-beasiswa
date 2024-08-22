@@ -2,29 +2,64 @@
 
 @section('content')
     {{-- Top Section --}}
-    <section class="mb-6 mt-16">
-        <div class="px-4 sm:px-6 lg:px-24">
-            <div
-                class="w-full bg-sky-600 p-4 sm:p-6 lg:p-10 flex flex-col sm:flex-row justify-between items-center rounded-xl shadow-xl">
-                <div class="text-center sm:text-left mb-6 sm:mb-0">
-                    <h1 class="text-xl sm:text-2xl lg:text-2xl font-bold text-white mb-2">Selamat Datang di Website</h1>
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Scholar Verse</h1>
-                    <div class="mt-4 sm:mt-6 lg:mt-10">
-                        <h3 class="text-sm sm:text-base lg:text-lg font-bold text-white mb-2">Temukan Informasi Seputar
-                            Kalender Beasiswa Agustus 2024</h3>
-                        <h3 class="text-xs sm:text-sm lg:text-base font-medium text-white mb-4 sm:mb-6 lg:mb-6">Tekan
-                            Tombol di Bawah Untuk Mendaftar Sekarang</h3>
-                        <a href="" type="button"
-                            class="inline-block text-white bg-orange-400 px-3 py-2 sm:px-4 sm:py-3 lg:p-4 text-xs sm:text-sm lg:text-base font-semibold rounded-md shadow-lg hover:bg-orange-500 transition duration-300">
-                            Daftar Sekarang!
-                        </a>
+    <section class="bg-sky-600 relative overflow-hidden">
+        <!-- Background kuning bulat -->
+        <div
+            class="absolute top-0 right-0 rotate-90 w-1/2 h-full rounded-full bg-yellow-300 z-0 transform translate-y-[-60%] translate-x-[5%]">
+        </div>
+
+        <!-- Teks di atas latar belakang kuning -->
+        <div class="relative z-10 text-center ml-96 -mr-80 mt-12">
+            <h2 class="text-sky-600 text-xl font-bold mb-6 font-kalam">Sukses Meraih Mimpi kuliah di</h2>
+            <h2 class="text-2xl lg:text-5xl font-bold text-sky-600 mb-2 font-kalam">KAIST</h2>
+            <h2 class="text-2xl lg:text-xs font-bold text-sky-600 font-kalam">Korea Advanced Institute of Science & Technology</h2>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Left column -->
+                <div>
+                    <h1 class="text-2xl lg:text-4xl font-bold text-white mb-4">
+                        Informasi Beasiswa & Bimbingan Kuliah ke Luar Negeri Terlengkap
+                    </h1>
+                    <p class="text-sm lg:text-base font-semibold text-white mb-6">
+                        Scholar Verse siap bantu persiapan pendaftaran kuliah S1, S2, atau S3 di kampus impian kamu dengan
+                        beasiswa.
+                    </p>
+                    <div class="bg-sky-700 p-6 rounded-lg shadow-lg mb-20">
+                        <h3 class="text-white font-semibold mb-4">Dapatkan penawaran spesial khusus!</h3>
+                        <form>
+                            <div class="mb-4">
+                                <input type="number" placeholder="Nomor Whatsapp"
+                                    class="w-full p-2 rounded bg-white text-gray-800">
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="text-white font-semibold mb-4">Pilih Tingkatan</h3>
+                                <select class="w-full p-2 rounded bg-white text-gray-800">
+                                    <option>S1</option>
+                                    <option>S2</option>
+                                    <option>S3</option>
+                                </select>
+                            </div>
+                            <button class="w-full bg-orange-500 text-white py-2 rounded font-semibold">
+                                Dapatkan Penawaran
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <img src="{{ asset('assets/img/img-1.png') }}" alt="Image 1"
-                    class="w-32 h-32 sm:w-48 sm:h-48 lg:w-60 lg:h-60 object-cover drop-shadow-lg">
+
+                <!-- Right column -->
+                <div class="relative flex justify-between items-end h-full">
+                    <img src="{{ asset('assets/img/xaviera.png') }}" alt="Xaviera Putri" class="w-80 max-w-xs lg:max-w-md">
+                    <div class="relative items-end z-10 text-right mb-20">
+                        <h2 class="text-yellow-400 text-4xl font-bold font-kalam">Xaviera Putri</h2>
+                        <p class="text-xs font-bold text-yellow-400 mt-2 font-kalam">Alumni Bimbingan Scholar Verse lolos ke Korea Advanced Institute of Science & Technology</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Promo Section -->
     <section class="mb-16 py-8">
@@ -103,14 +138,14 @@
 
     <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f0f9ff" fill-opacity="1"
+            <path fill="#e0f2fe" fill-opacity="1"
                 d="M0,160L30,138.7C60,117,120,75,180,85.3C240,96,300,160,360,197.3C420,235,480,245,540,213.3C600,181,660,107,720,106.7C780,107,840,181,900,186.7C960,192,1020,128,1080,128C1140,128,1200,192,1260,224C1320,256,1380,256,1410,256L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
             </path>
         </svg>
     </div>
 
     {{-- Kerja Sama --}}
-    <section class="bg-sky-50 py-52 -mb-56">
+    <section class="bg-sky-100 py-52 -mb-56">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-bold text-center mb-12 -mt-28">Tutorial Daftar Beasiswa di Scholar Verse</h1>
 
