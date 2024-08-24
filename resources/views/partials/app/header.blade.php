@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="flex items-center gap-10 mt-4-mobile">
-            <a href="#" type="button" class="bg-blue-500 text-white px-4 py-1 rounded-lg shadow-lg hover:bg-blue-600">Login</a>
+            <a href={{ route('login') }} type="button" class="bg-blue-500 text-white px-4 py-1 rounded-lg shadow-lg hover:bg-blue-600">Login</a>
             <div class="p-6 rounded-full shadow-md bg-gray-200 hidden-mobile"></div>
         </div>
     </nav>
