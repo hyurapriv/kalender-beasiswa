@@ -17,8 +17,8 @@
         <!-- Login Form -->
         <form id="loginForm" class="space-y-4">
             <div>
-                <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" class="mt-1 p-2 block w-full rounded-md border-gray-600 border shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" placeholder="John Doe">
+                <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 block w-full rounded-md border-gray-600 border shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50" placeholder="John Doe">
             </div>
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
