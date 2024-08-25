@@ -46,12 +46,6 @@
                             class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                             required>
                     </div>
-                    <div>
-                        <label for="no_hp" class="block text-sm font-medium text-gray-700">Nomor HP</label>
-                        <input type="tel" id="no_hp" name="no_hp"
-                            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-                            required>
-                    </div>
                 </div>
             </div>
 
@@ -86,24 +80,32 @@
                 <h3 class="text-lg font-semibold mb-4">Verification</h3>
                 <div class="space-y-4">
                     <div>
-                        <label for="otp" class="block text-sm font-medium text-gray-700">Masukkan OTP</label>
-                        <input type="text" id="otp" name="otp"
-                            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-                            required>
+                        <label for="otp" class="block text-sm font-medium text-gray-700">Masukkan Kode
+                            Verifikasi</label>
+                        <div class="flex justify-between mt-2">
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                            <input type="text" maxlength="1"
+                                class="otp-input w-12 h-12 text-center text-xl border-2 border-gray-300 rounded-md focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+                                required>
+                        </div>
+                        <input type="hidden" id="otp" name="otp">
                     </div>
-                    <p class="text-sm text-gray-500">OTP telah dikirim ke nomor HP Anda. Berlaku selama 5 menit.</p>
-                </div>
-            </div>
-            <div id="step3" class="step hidden">
-                <h3 class="text-lg font-semibold mb-4">Verification</h3>
-                <div class="space-y-4">
-                    <div>
-                        <label for="otp" class="block text-sm font-medium text-gray-700">Masukkan OTP</label>
-                        <input type="text" id="otp" name="otp"
-                            class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-                            required>
-                    </div>
-                    <p class="text-sm text-gray-500">OTP telah dikirim ke nomor HP Anda. Berlaku selama 5 menit.</p>
+                    <p class="text-sm text-gray-500">Kode verifikasi telah dikirim ke email Anda. Berlaku selama 5
+                        menit.</p>
                 </div>
             </div>
 
@@ -131,6 +133,8 @@
         const submitBtn = document.getElementById('submitBtn');
         const progressBar = document.getElementById('progressBar');
         const progressText = document.getElementById('progressText');
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const hiddenOtpInput = document.getElementById('otp');
 
         function updateStep(step) {
             document.querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
@@ -146,8 +150,8 @@
         nextBtn.addEventListener('click', () => {
             if (currentStep < totalSteps) {
                 if (currentStep === 2) {
-                    // Trigger OTP sending before moving to step 3
-                    sendOTP().then(() => {
+                    // Trigger email verification before moving to step 3
+                    sendVerificationEmail().then(() => {
                         currentStep++;
                         updateStep(currentStep);
                     });
@@ -165,38 +169,70 @@
             }
         });
 
-        function sendOTP() {
-            const no_hp = document.getElementById('no_hp').value;
-            return fetch('{{ route('send.otp') }}', {
+        function sendVerificationEmail() {
+            const email = document.getElementById('email').value;
+            return fetch('{{ route('send.verification.email') }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: JSON.stringify({
-                        no_hp: no_hp
+                        email: email
                     })
                 })
                 .then(response => {
+                    console.log('Response Status:', response.status); // Menampilkan status
+                    console.log('Response Status Text:', response.statusText); // Menampilkan status text
                     if (!response.ok) {
-                        return response.text().then(text => {
-                            throw new Error(text)
-                        });
+                        throw new Error('Network response was not ok');
                     }
-                    return response.json();
+                    return response.text(); // Ubah ini dari response.json()
+                })
+                .then(text => {
+                    console.log('Raw response:', text); // Cetak respons mentah
+                    try {
+                        return JSON.parse(text); // Coba parse sebagai JSON
+                    } catch (error) {
+                        console.error('Failed to parse JSON:', error);
+                        throw new Error('Server returned non-JSON response');
+                    }
                 })
                 .then(data => {
                     if (data.success) {
-                        alert('OTP berhasil dikirim ke nomor HP Anda.');
+                        alert('Kode verifikasi berhasil dikirim ke email Anda.');
                     } else {
                         throw new Error(data.message || 'Unknown error');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Terjadi kesalahan saat mengirim OTP: ' + error.message);
-                    throw error;
+                    alert('Terjadi kesalahan saat mengirim kode verifikasi: ' + error.message);
                 });
+        }
+
+
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1) {
+                    if (index < otpInputs.length - 1) {
+                        otpInputs[index + 1].focus();
+                    }
+                }
+                updateHiddenOtpInput();
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value.length === 0) {
+                    if (index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                }
+            });
+        });
+
+        function updateHiddenOtpInput() {
+            hiddenOtpInput.value = Array.from(otpInputs).map(input => input.value).join('');
         }
 
         form.addEventListener('submit', (e) => {

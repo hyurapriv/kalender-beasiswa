@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'registForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::post('/send-otp', [AuthController::class, 'sendOtp'])->name('send.otp');
+Route::post('/send-verification-email', [AuthController::class, 'sendVerificationEmail'])->name('send.verification.email');
+Route::get('/verify-email/{token}', [AuthController::class, 'verifyEmail'])->name('verify.email');
 
 Route::get('/', function () {
     return view('/pages/app/index');

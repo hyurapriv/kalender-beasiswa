@@ -25,8 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'no_hp',
-        'kode_otp',
-        'kode_otp_expired_at',
+        'email_verification_token',
         'alamat',
         'tanggal_lahir',
     ];

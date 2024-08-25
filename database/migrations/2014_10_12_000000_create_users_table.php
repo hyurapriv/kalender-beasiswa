@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('no_hp')->unique();
-            $table->string('kode_otp')->nullable();
-            $table->timestamp('kode_otp_expired_at')->nullable();
+            $table->string('no_hp')->unique()->nullable();
+            $table->string('email_verification_token')->nullable();
             $table->text('alamat')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->rememberToken();
